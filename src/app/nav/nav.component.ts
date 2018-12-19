@@ -9,8 +9,7 @@ export class NavComponent implements OnInit {
 
 	appTitle: string = 'myapp';
 	// OR (either will work)
-	appTitle : string = 'myapp';
-  
+	  
 	constructor() { }
   
 	ngOnInit() {
