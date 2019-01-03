@@ -19,7 +19,10 @@ export class AuthService {
 	  	private _router: Router, 
 		private http: HttpClient,
 		private decoder: JwtHelper
-	) { }
+	) 
+	{ 
+		
+	}
 
 	/**
 	 * this is used to clear anything that needs to be removed
@@ -45,7 +48,8 @@ export class AuthService {
 	}
 
 	refreshToken(): Observable<string> {
-		const url = 'url to refresh token here';
+		
+		const url = `${this.baseUrl}/Account/RefreshToken`;
 	
 		// append refresh token if you have one
 		const refreshToken = localStorage.getItem('refreshToken');
@@ -94,7 +98,6 @@ export class AuthService {
 	login(username, password) {
 		
 		return this.http.post(`${this.baseUrl}/Account/login`, { username: username, password: password })
-	
 	
 		// localStorage.setItem('token', `eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE1MzMyNzM5NjksImV4cCI6MTU2NDgxMDAwNSwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoiVGVzdCBHdWFyZCIsIkdpdmVuTmFtZSI6IkpvaG5ueSIsIlN1cm5hbWUiOiJSb2NrZXQiLCJFbWFpbCI6Impyb2NrZXRAZXhhbXBsZS5jb20ifQ.GA0Y9gYIjmx1jLwuRHuBgZ8m6o-NgkD84nO0ym68CWo`);
 	}
